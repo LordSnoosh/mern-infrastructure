@@ -12,6 +12,18 @@ export async function signUp(userData) {
   }
 }
 
+export async function login(credentials) {
+  try {
+    // usersAPI.login will resolve to the token sent back
+    // from the server
+    const token = await usersAPI.login(credentials);
+    localStorage.setItem('token', token);
+    return getUser();
+  } catch {
+    throw new Error('Invalid Credentials - Try Again');
+  }
+}
+
 export function getToken() {
   // getItem returns null if there's no string
   const token = localStorage.getItem('token');
@@ -36,3 +48,4 @@ export function getUser() {
 export function logOut() {
   localStorage.removeItem('token');
 }
+
