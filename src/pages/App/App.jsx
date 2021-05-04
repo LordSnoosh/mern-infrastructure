@@ -14,7 +14,7 @@ export default function App() {
     <main className="App">
       { user ? 
         <>
-          <NavBar />
+          <NavBar user={user} setUser={setUser} />
           <Switch>
             <Route path="/orders/new">
               <NewOrderPage />
