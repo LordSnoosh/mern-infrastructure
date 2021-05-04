@@ -49,3 +49,7 @@ export function logOut() {
   localStorage.removeItem('token');
 }
 
+export function checkToken() {
+  alert('clicked');
+}
+
