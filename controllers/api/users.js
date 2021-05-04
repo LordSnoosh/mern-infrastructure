@@ -11,7 +11,7 @@ async function create(req, res) {
     const token = createJWT(user);
     // Yes, we can send back a simple string
     res.json(token);
-  } catch {
+  } catch(err) {
     // Client will check for non-200 status code
     // 400 = Bad Request
     res.status(400).json(err);
